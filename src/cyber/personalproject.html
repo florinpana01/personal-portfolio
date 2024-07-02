@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+  <head>
+    <title>Florin Pana Portfolio</title>
+
+    <style>
+      /* body {
+            background-image: url(515.jpg);
+        } */
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a,
+      .dropbtn {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover,
+      .dropdown:hover .dropbtn {
+        background-color: red;
+      }
+
+      li.dropdown {
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="portfolio-home.html">Florin Pana - Portfolio</a></li>
+      <li><a href="bok.html">Body of Knowledge</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Learning outcomes</a>
+        <div class="dropdown-content">
+          <a href="EthicalHacker.html">Ethical Hacker</a>
+          <a href="RiskConsultant.html">Risk Consultant</a>
+          <a href="SecurityEngineer.html">Security Engineer</a>
+          <a href="SecurityAnalyst.html">Security Analyst</a>
+          <a href="SecurityProfessional.html">Security Professional</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Personal projects</a>
+        <div class="dropdown-content">
+          <a href="personalproject.html"
+            >Personal Vulnerability Investigation</a
+          >
+          <a href="internship.html">Internship Preparation</a>
+          <a href="psp.html">Personal Specialization Project</a>
+        </div>
+      </li>
+      <li><a href="Conclusion.html">Conclusion</a></li>
+      <li><a href="group.html">Group project - phases 2 and 3</a></li>
+    </ul>
+    <h1>Personal Vulnerability Investigation</h1>
+    <center>
+      <h3>
+        How did you spend your hours for the Personal Vulnerability
+        Investigation?
+      </h3>
+      <p>
+        Below you can see the division of these 20 hours between the 5 main
+        activities of this project, along with brief explanations of each one.
+        More detailed information is available in this
+        <a
+          href="documents/Personal Vulnerability Investigation Research Report.docx"
+          >word document</a
+        >
+        about the Personal Vulnerability Investigation and on the
+        <a href="documents/Personal vulnerability investigation.pptx"
+          >Powerpoint presentation</a
+        >
+        i have made.
+      </p>
+
+      <canvas id="PVIChart" style="width: 100%; max-width: 600px"></canvas>
+
+      <script>
+        var xValues = [
+          "Web research",
+          "Choosing a device",
+          "Bug exploit",
+          "Virus related work",
+          "Documentation",
+        ];
+        var yValues = [8, 2, 2, 5, 3];
+        var barColors = ["#b91d47", "#00aba9", "#2b5797", "#e8c3b9", "#1e7145"];
+
+        new Chart("PVIChart", {
+          type: "pie",
+          data: {
+            labels: xValues,
+            datasets: [
+              {
+                backgroundColor: barColors,
+                data: yValues,
+              },
+            ],
+          },
+          options: {
+            title: {
+              display: true,
+              text: "The division of the 20 hours allocated for the Personal Vulnerability Investigation:",
+            },
+          },
+        });
+      </script>
+      <p>
+        <b>->Web research:</b> by far the part of the project that lasted the
+        most, web research largely did not prove to be very useful. As it turns
+        out, there is very little relevant information on the internet, mainly
+        due to the sensitivity of the information. This topic is not very well
+        covered on the web pages in order to prevent malicious attacks.
+      </p>
+      <p>
+        <b>->Choosing a device:</b> this took longer than expected mainly
+        because i have changed my mind along the way. After consulting the
+        teachers and the list of possible devices from Canvas, i decided to hack
+        into a toy car, but i later switched to one of my old smartphones.
+      </p>
+      <p>
+        <b>->Bug exploit:</b> After rigurous web research on the matter, i have
+        discovered a Samsung system bug and decided to exploit it. The bug
+        allows the attacker to unlock the phone without typing the password.
+      </p>
+      <p>
+        <b>->Virus related work:</b> One of the very few actually useful web
+        pages i have found describes the steps needed to create a virus which
+        once installed on the victim's phone can get control of the camera,
+        among other things. I have taken my time trying to get it to work.
+      </p>
+      <p>
+        <b>->Documentation:</b> This includes the creation of this webpage,
+        along with this
+        <a
+          href="documents/Personal Vulnerability Investigation Research Report.docx"
+          >word document</a
+        >, containing in-depth information about the Personal Vulnerability
+        Investigation.
+      </p>
+    </center>
+  </body>
+</html>

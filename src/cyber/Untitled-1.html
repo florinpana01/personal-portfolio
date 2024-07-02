@@ -1,0 +1,38 @@
+// payments page
+<app-billing-card [billingHistory]="user.billingHistory" [page]="'payments'"></app-billing-card>
+//billing card component
+<nb-card>
+    <nb-card-body>
+        <h1>Billing history</h1>
+        <div class="row">
+            <div class="col-3">Date</div>
+            <div class="col-3">Status</div>
+            <div class="col-3">Transaction ID</div>
+            <div class="col-3">Price</div>
+        </div>
+        <hr />
+        <div *ngIf="page == 'profile'">
+            <div *ngFor="let row of lastThreePayments" class="row billing-row">
+                <div class="col-3">{{ row.createdAt | date: 'dd/MM/yyyy' }}</div>
+                <div class="col-3">{{ row.status }}</div>
+                <div class="col-3">{{ row.id }}</div>
+                <div class="col-3">{{ row.amount.value | currency: 'EUR' }}</div>
+            </div>
+        </div>
+        <div *ngIf="page == 'payments'">
+            <div *ngFor="let row of billingHistory" class="row billing-row">
+                <div class="col-3">{{ row.createdAt | date: 'dd/MM/yyyy' }}</div>
+                <div class="col-3">{{ row.status }}</div>
+                <div class="col-3">{{ row.id }}</div>
+                <div class="col-3">{{ row.amount.value | currency: 'EUR' }}</div>
+            </div>
+        </div>
+        <!-- <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls> -->
+    </nb-card-body>
+    <nb-card-footer *ngIf="page == 'profile'">
+        <a href="/profile/payments" class="more-info">More information...</a>
+    </nb-card-footer>
+    <nb-card-footer *ngIf="page == 'payments'">
+        <a href="/profile" class="more-info">Back to the profile page</a>
+    </nb-card-footer>
+</nb-card>

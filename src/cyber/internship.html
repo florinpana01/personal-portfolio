@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+  <head>
+    <title>Florin Pana Portfolio</title>
+
+    <style>
+      /* body {
+            background-image: url(515.jpg);
+        } */
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a,
+      .dropbtn {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover,
+      .dropdown:hover .dropbtn {
+        background-color: red;
+      }
+
+      li.dropdown {
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="portfolio-home.html">Florin Pana - Portfolio</a></li>
+      <li><a href="bok.html">Body of Knowledge</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Learning outcomes</a>
+        <div class="dropdown-content">
+          <a href="EthicalHacker.html">Ethical Hacker</a>
+          <a href="RiskConsultant.html">Risk Consultant</a>
+          <a href="SecurityEngineer.html">Security Engineer</a>
+          <a href="SecurityAnalyst.html">Security Analyst</a>
+          <a href="SecurityProfessional.html">Security Professional</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Personal projects</a>
+        <div class="dropdown-content">
+          <a href="personalproject.html"
+            >Personal Vulnerability Investigation</a
+          >
+          <a href="internship.html">Internship Preparation</a>
+          <a href="psp.html">Personal Specialization Project</a>
+        </div>
+      </li>
+      <li><a href="Conclusion.html">Conclusion</a></li>
+      <li><a href="group.html">Group project - phases 2 and 3</a></li>
+    </ul>
+    <h1>Internship preparation</h1>
+    <center>
+      <h3>How did you spend your hours for the Internship preparation?</h3>
+      <p>
+        Below you can see the division of these 10 hours between the 5 main
+        activities of this project, along with brief explanations of each one.
+      </p>
+
+      <canvas id="PVIChart" style="width: 100%; max-width: 600px"></canvas>
+
+      <script>
+        var xValues = [
+          "Checking the asam.fhict platform for options",
+          "Sending various internship applications",
+          "Finding a company and conducting the interview",
+          "Submitting the documents",
+        ];
+        var yValues = [4, 2, 2, 2];
+        var barColors = ["#b91d47", "#00aba9", "#2b5797", "#e8c3b9"];
+
+        new Chart("PVIChart", {
+          type: "pie",
+          data: {
+            labels: xValues,
+            datasets: [
+              {
+                backgroundColor: barColors,
+                data: yValues,
+              },
+            ],
+          },
+          options: {
+            title: {
+              display: true,
+              text: "The division of the 10 hours allocated for the Internship preparation:",
+            },
+          },
+        });
+      </script>
+      <p>
+        <b>->Checking the asam.fhict platform for options:</b> This activity
+        took the most time because I needed a thorough research of every
+        available option. By looking multiple times on the pages and available
+        companies, I have created a list of 10 potential companies that fit my
+        criteria.
+      </p>
+      <p>
+        <b>->Sending various internship applications:</b> After having made the
+        shortlist, I began sending applications to the selected companies,
+        containing a paragraph about why I want to apply and my resume.
+      </p>
+      <p>
+        <b>->Finding a company and conducting the interview:</b> Multiple
+        companies have replied to my email, and two of them have accepted my
+        proposal. In the end I have chosen a company named Bull44. I had the
+        interview and the company accepted to work with me.
+      </p>
+      <p>
+        <b>->Submitting the documents:</b> After being accepted by Bull44, I
+        began working on the internship proposal form and the trainee agreement.
+        Currently, both documents have been submitted on Canvas, reviewed and
+        accepted. I will begin work on february 7h (semester 5 week 1)
+      </p>
+    </center>
+  </body>
+</html>

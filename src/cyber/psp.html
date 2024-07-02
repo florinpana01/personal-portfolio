@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<head>
+    <title>Florin Pana Portfolio</title>
+
+    <style>
+        /* body {
+            background-image: url(515.jpg);
+        } */
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a,
+        .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        li a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: red;
+        }
+        
+        li.dropdown {
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li><a href="portfolio-home.html">Florin Pana - Portfolio</a></li>
+        <li><a href="bok.html">Body of Knowledge</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Learning outcomes</a>
+            <div class="dropdown-content">
+                <a href="EthicalHacker.html">Ethical Hacker</a>
+                <a href="RiskConsultant.html">Risk Consultant</a>
+                <a href="SecurityEngineer.html">Security Engineer</a>
+                <a href="SecurityAnalyst.html">Security Analyst</a>
+                <a href="SecurityProfessional.html">Security Professional</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Personal projects</a>
+            <div class="dropdown-content">
+                <a href="personalproject.html">Personal Vulnerability Investigation</a>
+                <a href="internship.html">Internship Preparation</a>
+                <a href="psp.html">Personal Specialization Project</a>
+            </div>
+        </li>
+        <li><a href="Conclusion.html">Conclusion</a></li>
+        <li><a href="group.html">Group project - phases 2 and 3</a></li>
+    </ul>
+    <h1>Personal Specialization Project</h1>
+    <center>
+        <h3>How did you spend your hours for the Personal Specialization Project?</h3>
+        <p>Below you can see the division of these 40 hours between the 5 main activities of this project, along with brief explanations of each one. More detailed information is available in this <a href="documents/Research report for the Personal Specialization Project.docx">word document</a>            about the Personal Specialization Project and on the <a href="documents/Personal Specialization Project.pptx">Powerpoint presentation</a> i have made. The main objective for this project has been to create 2 workshops that could potentially
+            be used in the future for the ICS4 course. Along with it came the ideas to do research on LoRa devices, the security of my code from the previous semesters, and revisiting the old courses that are related to the Cyber Security course of this
+            semester.
+        </p>
+
+        <canvas id="PVIChart" style="width:100%;max-width:600px"></canvas>
+
+        <script>
+            var xValues = ["Checking the old courses", "Creating the workshops", "LoRa research", "Analyzing the old code", "Preparing for the presentation"];
+            var yValues = [4, 10, 15, 8, 3];
+            var barColors = [
+                "#b91d47",
+                "#00aba9",
+                "#2b5797",
+                "#e8c3b9",
+                "#1e7145"
+            ];
+
+            new Chart("PVIChart", {
+                type: "pie",
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        backgroundColor: barColors,
+                        data: yValues
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: "The division of the 40 hours allocated for the Personal Specialization Project:"
+                    }
+                }
+            });
+        </script>
+        <p><b>->Checking the old courses:</b> This has been an important step throughout the entirety of the semester. Due to my background in software engineering, I only had limited knowledge about infrastructure and cyber security. Revisiting the old
+            workshops from the infrastructure course in semester 1 helped me remember and better understand many of the concepts I have learned throughout semester 4. </p>
+        <p><b>->Creating the workshops:</b> This is one of the project suggestions on the <a href="https://fhict.instructure.com/courses/11556/pages/explanation-personal-specialisation-project?module_item_id=680288">Canvas page</a>. I have thought of workshop
+            ideas for the ICS4 course, and I eventually created 2 Ethical Hacker workshops: <a href="documents/workshop 1 what to do after a cyber attack.pptx">What to do during and after a cyber attack as a victim</a>, and <a href="documents/workshop 2 cyber security in big companies.pptx">Cyber security in big companies</a>.
+            Creating such workshops has been more difficult than I anticipated, but ultimately I achieved my goal.</p>
+        <p><b>->LoRa research:</b> This has been the activity that has taken the most time. Having to work with LoRa devices for phase 2 of the project, I found myself having to do research on a topic I had no experience with. The personal specialization
+            document research report contains information about LoRa devices, and a brief explanation about the scope of the group project.</b>
+        </p>
+        <p><b>->Analyzing the old code</b> I have conducted research on the security of my old code. I have looked at the coding and testing techniques I have used throughout the semesters and the security of my web applications. I have showcased their strengths
+            and vulnerabilities in the research report.</p>
+        <p><b>->Preparing for the presentation:</b> This time slot has been allocated to creating the powerpoint presentation for the personal specialization project, as well as updating the portfolio with this page.</b>
+        </p>
+    </center>
+
+</body>
+
+</html>
